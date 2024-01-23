@@ -30,3 +30,20 @@ bitcoin = bitcoin.to_f
 
 # 3. inspect the bitcoin_data hash
 # puts bitcoin_data
+current_price = bitcoin_data["bpi"]["USD"]["rate_float"]
+user_holdings_value = bitcoin * current_price
+
+# output
+puts "1 BTC is valued at $#{current_price.round(2)} USD."
+puts "Your BTC is worth $#{user_holdings_value.round(2)}!"
+
+
+
+
+
+
+if user_holdings_value > 10000
+    puts "Sheesh!"
+else
+    puts "...broke boi..."
+end
